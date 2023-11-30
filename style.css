@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background: #F8F8F8;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(26, 25, 25);
+}
+
+.Logo {
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav ol {
+    display: flex;
+    list-style: none;
+}
+
+.btn {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    display: none;
+}
+
+.btn::before {
+    content: '\f0c9';
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.nav ol li {
+    margin: 1em;
+}
+
+.nav ol li a {
+    text-decoration: none;
+    padding: 0.2rem 1.2rem 0.9rem 1.2rem;
+    border-radius: 10px 10px 0 0;
+    color: rgb(255, 255, 255);
+    transition: all 0.4s;
+    position: relative;
+    z-index: 1;
+}
+
+.nav ol li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 41px;
+    border-radius: 10px 10px 0 0;
+    background: #ffffff;
+    transform-origin: bottom;
+    background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255)55);
+    transform: scaleY(0.05);
+    z-index: -1;
+    transition: all 0.4s;
+}
+
+.nav ol li a:hover::before {
+    transform: scaleY(1.1);
+}
+
+.nav ol li a:hover {
+    font-weight: 800;
+    color: rgb(12, 0, 0);
+}
+
+@media (max-width:1200px){
+    .btn{
+        display: flex;
+        z-index: 100;
+    }
+    header{
+        justify-content: space-between;
+        padding: 0.2rem;
+    }
+    .nav{
+        width: 100%;
+        position: absolute;
+        top:0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        background-color: #000000;
+        transform:translate(-110%);
+        transition: all .4s;
+    }
+    input:checked ~ .nav{
+        transform: translate(0%);
+    }
+    input:checked::before{
+        content: '\f00d';
+    }
+    @media(max-width:700px){
+        .nav ol{
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+}
+.fa-solidfa-bars {
+    font-size: 1.5rem; /* Adjust the size as needed */
+    cursor: pointer;
+    display: none; /* Hide by default on larger screens */
+}
+.Logo:hover {
+    font-size: 2rem; /* Increase the font size on hover */
+    font-weight: 800; /* Change the font weight on hover */
+}
+
+img{
+    max-width: 570px;
+    float: right;
+}
+body{
+    background-color: rgb(0, 0, 0);
+}
+.body{
+    margin: 150px auto;
+    width: 90%;
+    overflow: hidden; 
+}
+.text {
+    color: rgb(255, 255, 255);
+    padding-top: 150px;
+    padding-right: 150px; /* Adjust the padding as needed */
+}
+
+.text h2 {
+    font-size: 50px;
+}
+
+.text p {
+    font-size: 16px;
+    padding-bottom: 10px; /* Add padding to the bottom of <p> elements */
+    color: rgb(123, 119, 119);
+}
+
+button {
+    background-color: #0a57a9; /* Set the background color */
+    color: #fff; /* Set the text color */
+    padding: 10px 20px; /* Adjust padding for top/bottom and left/right */
+    border: none; /* Remove border */
+    border-radius: 35px; /* Add border-radius for rounded corners */
+    font-size: 16px; /* Set the font size */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 800;
+    cursor: pointer; /* Add a pointer cursor on hover */
+    transition: background-color 0.3s ease-in-out, font-size 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+button:hover {
+    background-color: #007bff; /* Change the background color on hover */
+    font-size: 22px;
+}
+#changing-image{    
+    transition: opacity 1s;
+}
+@media (max-width: 767px) {
+    .text h2{
+        font-size: 30px;
+    }
+    .text{
+        color: #ffffff;
+        padding-top: 150px;
+        padding-right: 0;
+    }
+    img{
+        width: 450px;
+    }
+}
+@media (max-width: 300px) {
+    .text h2{
+        font-size: 25px;
+    }
+    .text{
+        color: #ffffff;
+        font-size: 15px;
+        padding-right: 0;
+    }
+    img{
+        width: 250px;
+    }
+}
+@media (max-width: 967px){
+    .text h2{
+        font-size: 32px;
+    }
+    img{
+        max-width: 450px;
+    }
+
+}
+input{
+    color: white;
+}
+
